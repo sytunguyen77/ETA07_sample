@@ -1,0 +1,1072 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Google Fonts - Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <!-- Iconify -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/iconify/3.1.1/iconify.min.js"></script>
+    <link rel="stylesheet" href="css/style.css" />
+    <title>ETA07</title>
+    <style>
+      /* Smooth transitions for all responsive changes */
+      * {
+        transition: padding 0.2s ease, margin 0.2s ease, font-size 0.2s ease;
+      }
+    </style>
+  </head>
+  <body class="">
+    <!-- Top Navigation Bar -->
+    <nav class="bg-[#292C2D] text-[#fffff0]">
+      <div class="max-w-7xl mx-auto px-3 sm:px-4 md:px-5 lg:px-6">
+        <div class="flex items-center justify-between h-10 sm:h-11 md:h-12">
+          <!-- Left Navigation Links -->
+          <div class="flex items-center space-x-2 sm:space-x-3 md:space-x-4 lg:space-x-6 text-xs sm:text-sm md:text-base">
+            <button class="group flex items-center hover:text-[#ecc450] transition-colors">
+              <span class="group-hover:text-[#ecc450] transition-colors">Browse</span>
+              <img
+                src="images/desktop/vector.svg"
+                alt=""
+                class="w-2 h-2 sm:w-2.5 sm:h-2.5 md:w-3 md:h-3 ml-1 group-hover:opacity-70 transition-opacity"
+              />
+            </button>
+            <a href="#" class="hover:text-[#ecc450] transition-colors whitespace-nowrap">ETA Direct</a>
+            <a href="#" class="hover:text-[#ecc450] transition-colors">Membership</a>
+          </div>
+          <!-- Right Icons -->
+          <div class="flex items-center space-x-2 sm:space-x-2.5 md:space-x-3 lg:space-x-4">
+            <!-- Wishlist Icon -->
+            <button class="hover:text-gray-300 transition-colors p-0.5 sm:p-1">
+              <img src="images/desktop/heart.svg" alt="" class="w-5 h-5 sm:w-5.5 sm:h-5.5 md:w-6 md:h-6" />
+            </button>
+
+            <!-- Cart Icon with Badge -->
+            <button class="relative hover:text-gray-300 transition-colors p-0.5 sm:p-1">
+              <img src="images/desktop/cart.svg" alt="" class="w-5 h-5 sm:w-5.5 sm:h-5.5 md:w-6 md:h-6" />
+              <span
+                class="absolute -top-1 -right-1 bg-red-500 text-white text-xs rounded-full h-4 w-4 sm:h-4.5 sm:w-4.5 md:h-5 md:w-5 flex items-center justify-center"
+              >
+                1
+              </span>
+            </button>
+
+            <!-- User Profile -->
+            <button
+              class="w-6 h-6 sm:w-7.5 sm:h-7.5 md:w-8 md:h-8 bg-[#ecc450] rounded-full flex items-center justify-center text-gray-800 font-semibold hover:bg-yellow-300 transition-colors text-xs sm:text-sm md:text-base"
+            >
+              T
+            </button>
+
+            <!-- Hamburger Button -->
+            <!-- <div class="md:hidden">
+              <button id="menu-btn" type="button" class="z-40 block hamburger md:hidden focus:outline-none">
+                <span class="hamburger-top"></span>
+                <span class="hamburger-middle"></span>
+                <span class="hamburger-bottom"></span>
+              </button>
+            </div> -->
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Main Header with Search -->
+    <header class="bg-white sm:bg-gray-50 shadow-sm">
+      <div class="max-w-7xl mx-auto px-3 sm:px-4 md:px-5 lg:px-6 py-2.5 sm:py-3 md:py-4 lg:py-5">
+        <!-- Logo and Search in same row -->
+        <div class="flex flex-row items-center gap-2 sm:gap-3 md:gap-4 lg:gap-6">
+          <!-- Logo -->
+          <div class="flex items-center flex-shrink-0">
+            <img
+              src="images/desktop/logo-nav.svg"
+              alt="ETA07 Logo"
+              class="h-8 sm:h-9 md:h-10 lg:h-12 xl:h-14 w-auto object-contain transition-all cursor-pointer"
+            />
+          </div>
+
+          <!-- Shop by Category Dropdown - Desktop only -->
+          <div class="hidden sm:block relative flex-shrink-0">
+            <button class="flex items-center space-x-1 md:space-x-2 text-gray-600 hover:text-gray-800 transition-colors">
+              <div class="flex flex-col items-start justify-center -space-y-1">
+                <span class="text-xs md:text-sm lg:text-base leading-[1.2]">Shop by</span>
+                <span class="text-xs md:text-sm lg:text-base leading-[1.2]">category</span>
+              </div>
+              <img src="images/desktop/vector_2.svg" alt="" class="w-3.5 h-3.5 md:w-4 md:h-4 lg:w-5 lg:h-5 text-gray-500" />
+            </button>
+          </div>
+
+          <!-- Search Bar -->
+          <div class="flex-grow flex items-center w-full min-w-0">
+            <!-- Desktop: Search bar with separate button -->
+            <div class="hidden sm:flex w-full items-center gap-2 md:gap-3 lg:gap-4">
+              <!-- Search Input with Category Dropdown -->
+              <div class="flex flex-grow min-w-0 border border-[#292C2D] rounded-md md:rounded-lg overflow-hidden bg-white">
+                <!-- Search Input -->
+                <div class="relative flex-grow min-w-0">
+                  <input
+                    type="text"
+                    placeholder="Search for products & services "
+                    class="w-full pl-8 md:pl-10 lg:pl-12 pr-2 md:pr-3 lg:pr-4 py-2 md:py-2.5 lg:py-3.5 focus:outline-none text-xs md:text-sm lg:text-base placeholder:text-gray-500 placeholder:text-xs md:placeholder:text-sm lg:placeholder:text-base"
+                  />
+                  <img
+                    src="images/desktop/search.svg"
+                    class="absolute left-2 md:left-3 lg:left-4 top-1/2 transform -translate-y-1/2 w-3.5 h-3.5 md:w-4 md:h-4 lg:w-5 lg:h-5 text-gray-400"
+                    alt=""
+                  />
+                </div>
+
+                <!-- Vertical Divider -->
+                <div class="w-px bg-gray-300"></div>
+
+                <!-- Category Dropdown -->
+                <button class="flex items-center px-2 md:px-3 lg:px-5 bg-white hover:bg-gray-50 transition-colors flex-shrink-0">
+                  <span class="text-gray-600 text-xs md:text-sm lg:text-base whitespace-nowrap mr-1 md:mr-2 lg:mr-3"
+                    >All Categories</span
+                  >
+                  <img
+                    src="images/desktop/vector_2.svg"
+                    alt=""
+                    class="w-3.5 h-3.5 md:w-4 md:h-4 lg:w-5 lg:h-5 text-gray-600 flex-shrink-0"
+                  />
+                </button>
+              </div>
+
+              <!-- Search Button - Separate with gap -->
+              <button
+                class="px-4 md:px-6 lg:px-10 xl:px-12 py-2 md:py-2.5 lg:py-3.5 bg-[#ecc450] text-white font-medium rounded-md md:rounded-lg hover:bg-yellow-500 transition-all text-xs md:text-sm lg:text-base whitespace-nowrap flex-shrink-0"
+              >
+                Search
+              </button>
+            </div>
+
+            <!-- Mobile Search Bar-->
+            <div class="sm:hidden relative w-full">
+              <input
+                type="text"
+                placeholder="Search for anything"
+                class="w-full pl-3.5 pr-11 py-2 border border-[#292C2D] rounded-md focus:outline-none focus:border-[#ecc450] text-sm placeholder:text-gray-500 placeholder:text-xs"
+              />
+              <!-- Mobile Search Button  -->
+              <button
+                class="absolute right-1 top-1/2 transform -translate-y-1/2 bg-[#ecc450] rounded-md p-1.5 hover:bg-yellow-500 transition-colors"
+              >
+                <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="hero">
+      <!-- Full Width Background Container -->
+      <div class="bg-[#292C2D] rounded-[8px] overflow-hidden">
+        <!-- Content Container with max-width -->
+        <div class="max-w-7xl mx-auto">
+          <div
+            class="relative flex flex-col lg:flex-row items-center min-h-[250px] sm:min-h-[200px] md:min-h-[350px] lg:min-h-[600px]"
+          >
+            <!-- Left Content -->
+            <div class="w-full lg:w-1/2 px-5 py-10 sm:py-12 md:py-14 lg:py-0 z-10">
+              <h1 class="text-2xl sm:text-3xl md:text-4xl lg:text-4xl xl:text-5xl font-bold mb-4 sm:mb-5 md:mb-6 leading-tight">
+                <span class="text-[#ecc450]">Discover the Future</span>
+                <br class="hidden sm:block" />
+                <span class="text-[#ecc450]">of</span>
+                <span class="text-white">Online Shopping &</span>
+                <br class="hidden sm:block" />
+                <span class="text-white">Services</span>
+              </h1>
+
+              <p class="text-gray-300 text-sm sm:text-base md:text-sm mb-6 sm:mb-8 max-w-lg">
+                Your Gateway to Exclusive Deals, Local Services, and Member-Only Benefits. Join Today!
+              </p>
+
+              <!-- CTA Buttons -->
+              <div class="flex flex-col sm:flex-row gap-3 sm:gap-4">
+                <button
+                  class="px-5 sm:px-6 md:px-8 py-2.5 sm:py-3 md:py-4 bg-[#ecc450] text-[#ffffff] font-semibold rounded-[3px] hover:bg-yellow-500 transition-all text-sm sm:text-base"
+                >
+                  Become a Member
+                </button>
+                <button
+                  class="px-5 sm:px-6 md:px-10 py-2.5 sm:py-3 md:py-4 border border-[#ecc450] text-[#ecc450] rounded-[3px] hover:bg-[#ecc450] hover:text-gray-900 transition-all flex items-center justify-center gap-2 text-sm sm:text-base"
+                >
+                  Shop Now
+
+                  <img src="images/desktop/arrow-up.svg" alt="" class="" />
+                </button>
+              </div>
+            </div>
+
+            <!-- Right Content Alternative -->
+            <div class="hidden lg:block w-full lg:w-1/2 relative h-[600px]">
+              <!-- Woman with phone -->
+              <img
+                src="images/desktop/image-hero-woman.png"
+                alt="woman"
+                class="absolute h-full w-auto object-contain object-bottom"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Product Categories Section -->
+    <section id="category" class="py-6 sm:py-8 md:py-10">
+      <div class="max-w-7xl mx-auto">
+        <!-- Categories Grid -->
+        <div class="flex flex-wrap justify-between px-4">
+          <!-- Mobile Category -->
+          <div class="category-card cursor-pointer text-center group">
+            <div
+              class="category-icon w-16 h-16 sm:w-18 sm:h-18 md:w-20 md:h-20 lg:w-22 lg:h-22 mx-auto mb-2 sm:mb-3 bg-gray-100 rounded-full flex items-center justify-center group-hover:bg-gray-200 transition-all"
+            >
+              <img src="images/desktop/mobile.svg" alt="mobile" class="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8" />
+            </div>
+            <h3 class="text-xs sm:text-sm md:text-base font-medium text-gray-700">Mobile</h3>
+          </div>
+
+          <!-- Cosmetics Category -->
+          <div class="category-card cursor-pointer text-center group">
+            <div
+              class="category-icon w-16 h-16 sm:w-18 sm:h-18 md:w-20 md:h-20 lg:w-22 lg:h-22 mx-auto mb-2 sm:mb-3 bg-gray-100 rounded-full flex items-center justify-center group-hover:bg-gray-200 transition-all"
+            >
+              <img src="images/desktop/cosmetics.svg" alt="cosmetics" class="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8" />
+            </div>
+            <h3 class="text-xs sm:text-sm md:text-base font-medium text-gray-700">Cosmetics</h3>
+          </div>
+
+          <!-- Electronics Category -->
+          <div class="category-card cursor-pointer text-center group">
+            <div
+              class="category-icon w-16 h-16 sm:w-18 sm:h-18 md:w-20 md:h-20 lg:w-22 lg:h-22 mx-auto mb-2 sm:mb-3 bg-gray-100 rounded-full flex items-center justify-center group-hover:bg-gray-200 transition-all"
+            >
+              <img src="images/desktop/electronics.svg" alt="electronics" class="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8" />
+            </div>
+            <h3 class="text-xs sm:text-sm md:text-base font-medium text-gray-700">Electronics</h3>
+          </div>
+
+          <!-- Furniture Category -->
+          <div class="category-card cursor-pointer text-center group">
+            <div
+              class="category-icon w-16 h-16 sm:w-18 sm:h-18 md:w-20 md:h-20 lg:w-22 lg:h-22 mx-auto mb-2 sm:mb-3 bg-gray-100 rounded-full flex items-center justify-center group-hover:bg-gray-200 transition-all"
+            >
+              <img src="images/desktop/furniture.svg" alt="furniture" class="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8" />
+            </div>
+            <h3 class="text-xs sm:text-sm md:text-base font-medium text-gray-700">Furniture</h3>
+          </div>
+
+          <!-- Watches Category -->
+          <div class="category-card cursor-pointer text-center group">
+            <div
+              class="category-icon w-16 h-16 sm:w-18 sm:h-18 md:w-20 md:h-20 lg:w-22 lg:h-22 mx-auto mb-2 sm:mb-3 bg-gray-100 rounded-full flex items-center justify-center group-hover:bg-gray-200 transition-all"
+            >
+              <img src="images/desktop/watches.svg" alt="watches" class="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8" />
+            </div>
+            <h3 class="text-xs sm:text-sm md:text-base font-medium text-gray-700">Watches</h3>
+          </div>
+
+          <!-- Decor Category -->
+          <div class="category-card cursor-pointer text-center group">
+            <div
+              class="category-icon w-16 h-16 sm:w-18 sm:h-18 md:w-20 md:h-20 lg:w-22 lg:h-22 mx-auto mb-2 sm:mb-3 bg-gray-100 rounded-full flex items-center justify-center group-hover:bg-gray-200 transition-all"
+            >
+              <img src="images/desktop/decor.svg" alt="decor" class="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8" />
+            </div>
+            <h3 class="text-xs sm:text-sm md:text-base font-medium text-gray-700">Decor</h3>
+          </div>
+
+          <!-- Accessories Category -->
+          <div class="category-card cursor-pointer text-center group">
+            <div
+              class="category-icon w-16 h-16 sm:w-18 sm:h-18 md:w-20 md:h-20 lg:w-22 lg:h-22 mx-auto mb-2 sm:mb-3 bg-gray-100 rounded-full flex items-center justify-center group-hover:bg-gray-200 transition-all"
+            >
+              <img src="images/desktop/accessories.svg" alt="accessories" class="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8" />
+            </div>
+            <h3 class="text-xs sm:text-sm md:text-base font-medium text-gray-700">Accessories</h3>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Top Selling Products Section -->
+    <section id="top-selling" class="py-8 sm:py-10 md:py-12 lg:py-16">
+      <div class="max-w-7xl mx-auto px-4 sm:px-4 lg:px-6">
+        <!-- Section Header -->
+        <div class="text-center mb-8 sm:mb-10 md:mb-12">
+          <h2 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-800 mb-3 sm:mb-4">Top Selling Products</h2>
+          <p class="text-gray-600 text-sm sm:text-base md:text-lg max-w-2xl mx-auto">
+            Discover our most popular items that customers love
+          </p>
+        </div>
+
+        <!-- Products Grid -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-6 md:gap-6">
+          <!-- Product 1 - S-Series Comfort Chair -->
+          <div class="group cursor-pointer">
+            <div
+              class="relative bg-white shadow-lg rounded-lg overflow-hidden mb-2 aspect-square hover:shadow-xl transition-shadow duration-300"
+            >
+              <!-- Product Image -->
+              <div class="w-full h-full flex items-center justify-center p-4">
+                <img src="images/desktop/jacket.png" alt="S-Series Comfort Chair" class="w-50 h-50 mx-auto h-auto object-cover" />
+              </div>
+
+              <!-- Overlay Info Card for Top Selling Products-->
+              <div
+                class="absolute bottom-0 left-0 right-0 h-1/2 bg-[#292C2D] bg-opacity-95 text-white p-4 rounded-b-lg transform translate-y-full group-hover:translate-y-0 transition-all duration-500 ease-out flex"
+              >
+                <div class="flex justify-between items-center w-full">
+                  <div class="flex-1">
+                    <h3 class="font-semibold text-lg sm:text-xl mb-2">S-Series Comfort Chair</h3>
+
+                    <!-- Price -->
+                    <div class="flex items-center gap-2 mb-2">
+                      <span class="text-[#ecc450] font-bold text-xl sm:text-2xl">$120</span>
+                      <span class="text-gray-400 line-through text-sm sm:text-base">$160</span>
+                    </div>
+
+                    <!-- Seller & Rating -->
+                    <div class="">
+                      <div class="mb-1">
+                        <span class="text-xs sm:text-sm text-gray-300">Seller: </span>
+                        <span class="text-[#ecc450] font-medium text-xs sm:text-sm">Bob89</span>
+                      </div>
+
+                      <div class="flex items-center gap-1">
+                        <div class="flex text-[#ecc450]">
+                          <span class="text-sm">★★★★★</span>
+                        </div>
+                        <span class="text-gray-300 text-xs sm:text-sm">(88)</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Arrow Icon -->
+                  <div class="flex items-center justify-center">
+                    <img src="images/desktop/arrow_share.svg" alt="arrow share" />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Product 2 - Cesar Dog Food -->
+          <div class="group cursor-pointer">
+            <div
+              class="relative bg-white shadow-lg rounded-lg overflow-hidden mb-4 aspect-square hover:shadow-xl transition-shadow duration-300"
+            >
+              <!-- Product Image -->
+              <div class="w-full h-full flex items-center justify-center p-4">
+                <img src="images/desktop/cesar.png" alt="Cesar Premium Dog Food" class="w-50 h-50 mx-auto h-auto object-cover" />
+              </div>
+
+              <!-- Overlay Info Card for Top Selling Products -->
+              <div
+                class="absolute bottom-0 left-0 right-0 h-1/2 bg-[#292C2D] bg-opacity-95 text-white p-4 rounded-b-lg transform translate-y-full group-hover:translate-y-0 transition-all duration-500 ease-out flex"
+              >
+                <div class="flex justify-between items-center w-full">
+                  <div class="flex-1">
+                    <h3 class="font-semibold text-lg sm:text-xl mb-2">Cesar Dog Food</h3>
+
+                    <!-- Price -->
+                    <div class="flex items-center gap-2 mb-2">
+                      <span class="text-[#ecc450] font-bold text-xl sm:text-2xl">$24</span>
+                      <span class="text-gray-400 line-through text-sm sm:text-base">$32</span>
+                    </div>
+
+                    <!-- Seller & Rating -->
+                    <div class="">
+                      <div class="mb-1">
+                        <span class="text-xs sm:text-sm text-gray-300">Seller: </span>
+                        <span class="text-[#ecc450] font-medium text-xs sm:text-sm">PetStore</span>
+                      </div>
+
+                      <div class="flex items-center gap-1">
+                        <div class="flex text-[#ecc450]">
+                          <span class="text-sm">★★★★☆</span>
+                        </div>
+                        <span class="text-gray-300 text-xs sm:text-sm">(156)</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Arrow Icon -->
+                  <div class="flex items-center justify-center">
+                    <img src="images/desktop/arrow_share.svg" alt="arrow share" />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Product 3 - Canon Camera -->
+          <div class="group cursor-pointer">
+            <div
+              class="relative bg-white shadow-lg rounded-lg overflow-hidden mb-4 aspect-square hover:shadow-xl transition-shadow duration-300"
+            >
+              <!-- Product Image -->
+              <div class="w-full h-full flex items-center justify-center p-4">
+                <img src="images/desktop/camera.png" alt="Canon EOS DSLR Camera" class="w-50 h-50 mx-auto h-auto object-cover" />
+              </div>
+
+              <!-- Overlay Info Card for Top Selling Products  -->
+              <div
+                class="absolute bottom-0 left-0 right-0 h-1/2 bg-[#292C2D] bg-opacity-95 text-white p-4 rounded-b-lg transform translate-y-full group-hover:translate-y-0 transition-all duration-500 ease-out flex"
+              >
+                <div class="flex justify-between items-center w-full">
+                  <div class="flex-1">
+                    <h3 class="font-semibold text-lg sm:text-xl mb-2">Canon Camera</h3>
+
+                    <!-- Price -->
+                    <div class="flex items-center gap-2 mb-2">
+                      <span class="text-[#ecc450] font-bold text-xl sm:text-2xl">$899</span>
+                      <span class="text-gray-400 line-through text-sm sm:text-base">$1200</span>
+                    </div>
+
+                    <!-- Seller & Rating -->
+                    <div class="">
+                      <div class="mb-1">
+                        <span class="text-xs sm:text-sm text-gray-300">Seller: </span>
+                        <span class="text-[#ecc450] font-medium text-xs sm:text-sm">TechHub</span>
+                      </div>
+
+                      <div class="flex items-center gap-1">
+                        <div class="flex text-[#ecc450]">
+                          <span class="text-sm">★★★★★</span>
+                        </div>
+                        <span class="text-gray-300 text-xs sm:text-sm">(342)</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Arrow Icon -->
+                  <div class="flex items-center justify-center">
+                    <img src="images/desktop/arrow_share.svg" alt="arrow share" />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- View All Products Button -->
+        <div class="text-center mt-8 sm:mt-10 md:mt-12">
+          <button
+            class="px-6 sm:px-8 md:px-10 py-3 sm:py-4 bg-[#ecc450] text-white font-semibold rounded-[3px] hover:bg-yellow-500 transition-all text-sm sm:text-base"
+          >
+            View All Products
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Popular Service Categories Section -->
+    <section id="service-categories" class="py-8 sm:py-10 md:py-12 lg:py-16">
+      <div class="max-w-7xl mx-auto px-4 sm:px-4 lg:px-6">
+        <!-- Section Header -->
+        <div class="text-center mb-8 sm:mb-10 md:mb-12">
+          <h2 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-800 mb-3 sm:mb-4">
+            Popular Service Categories
+          </h2>
+        </div>
+
+        <!-- Services Carousel Container -->
+        <div class="relative">
+          <!-- Services Grid/Carousel -->
+          <div
+            class="flex gap-4 sm:gap-4 md:gap-4 overflow-x-auto pb-4 scrollbar-hide"
+            style="scrollbar-width: none; -ms-overflow-style: none"
+          >
+            <!-- Cable & Internet Service -->
+            <div class="flex-shrink-0 w-[280px] sm:w-[300px] md:w-[320px] lg:w-[340px]">
+              <div class="bg-[#ecc450] rounded-lg p-4 sm:p-5 md:p-6 h-full">
+                <h3 class="text-white font-semibold text-lg sm:text-xl md:text-2xl mb-4">Cable & Internet</h3>
+                <div class="bg-white rounded-lg overflow-hidden aspect-[4/3]">
+                  <img src="images/desktop/internet.png" alt="Cable & Internet" class="w-full h-full object-cover" />
+                </div>
+              </div>
+            </div>
+
+            <!-- Healthcare Service -->
+            <div class="flex-shrink-0 w-[280px] sm:w-[300px] md:w-[320px] lg:w-[340px]">
+              <div class="bg-[#ecc450] rounded-lg p-4 sm:p-5 md:p-6 h-full">
+                <h3 class="text-white font-semibold text-lg sm:text-xl md:text-2xl mb-4">Healthcare</h3>
+                <div class="bg-white rounded-lg overflow-hidden aspect-[4/3]">
+                  <img src="images/desktop/healthcare.png" alt="Healthcare" class="w-full h-full object-cover" />
+                </div>
+              </div>
+            </div>
+
+            <!-- Medical Testing Service -->
+            <div class="flex-shrink-0 w-[280px] sm:w-[300px] md:w-[320px] lg:w-[340px]">
+              <div class="bg-[#ecc450] rounded-lg p-4 sm:p-5 md:p-6 h-full">
+                <h3 class="text-white font-semibold text-lg sm:text-xl md:text-2xl mb-4">Medical Testing</h3>
+                <div class="bg-white rounded-lg overflow-hidden aspect-[4/3]">
+                  <img src="images/desktop/medical-testing.png" alt="Medical Testing" class="w-full h-full object-cover" />
+                </div>
+              </div>
+            </div>
+
+            <!-- Financial Services -->
+            <div class="flex-shrink-0 w-[280px] sm:w-[300px] md:w-[320px] lg:w-[340px]">
+              <div class="bg-[#ecc450] rounded-lg p-4 sm:p-5 md:p-6 h-full">
+                <h3 class="text-white font-semibold text-lg sm:text-xl md:text-2xl mb-4">Financial Services</h3>
+                <div class="bg-white rounded-lg overflow-hidden aspect-[4/3]">
+                  <img src="images/desktop/financial-services.png" alt="Financial Services" class="w-full h-full object-cover" />
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Navigation Arrow - Right (for desktop) -->
+          <button
+            class="hidden lg:flex absolute right-0 top-1/2 transform -translate-y-1/2 translate-x-1/2 bg-white rounded-full p-3 shadow-lg hover:shadow-xl transition-all items-center justify-center z-10"
+          >
+            <svg class="w-6 h-6 text-[#292C2D]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Top Booked Services Section -->
+    <section id="top-booked-services" class="py-8 sm:py-10 md:py-12 lg:py-16 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-4 lg:px-6">
+        <!-- Section Header -->
+        <div class="text-center mb-8 sm:mb-10 md:mb-12">
+          <h2 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-800">Top Booked Services</h2>
+        </div>
+
+        <!-- Services Grid - Images Only -->
+        <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-3 gap-4 sm:gap-4 md:gap-4">
+          <!-- Service 1 - Electrical -->
+          <div class="group cursor-pointer">
+            <div class="rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-all duration-300">
+              <div class="aspect-[16/9] bg-gray-100 relative overflow-hidden">
+                <img
+                  src="images/desktop/electrical.png"
+                  alt="Electrical Services"
+                  class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                />
+              </div>
+            </div>
+          </div>
+
+          <!-- Service 2 - Medical Testing -->
+          <div class="group cursor-pointer">
+            <div class="rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-all duration-300">
+              <div class="aspect-[16/9] bg-gray-100 relative overflow-hidden">
+                <img
+                  src="images/desktop/medical-testing-2.png"
+                  alt="Medical Testing"
+                  class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                />
+              </div>
+            </div>
+          </div>
+
+          <!-- Service 3 - Nutrition -->
+          <div class="group cursor-pointer">
+            <div class="rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-all duration-300">
+              <div class="aspect-[16/9] bg-gray-100 relative overflow-hidden">
+                <img
+                  src="images/desktop/nutrition.png"
+                  alt="Nutrition Consultation"
+                  class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                />
+              </div>
+            </div>
+          </div>
+
+          <!-- Service 4 - Plumbing -->
+          <div class="group cursor-pointer">
+            <div class="rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-all duration-300">
+              <div class="aspect-[16/9] bg-gray-100 relative overflow-hidden">
+                <img
+                  src="images/desktop/plumbing.png"
+                  alt="Plumbing Services"
+                  class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                />
+              </div>
+            </div>
+          </div>
+
+          <!-- Service 5 - Lawn Care -->
+          <div class="group cursor-pointer">
+            <div class="rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-all duration-300">
+              <div class="aspect-[16/9] bg-gray-100 relative overflow-hidden">
+                <img
+                  src="images/desktop/lawn-care.png"
+                  alt="Lawn Care"
+                  class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                />
+              </div>
+            </div>
+          </div>
+
+          <!-- Service 6 - Empty/Placeholder -->
+          <div class="hidden sm:block">
+            <!-- Empty cell for layout balance on desktop -->
+          </div>
+        </div>
+
+        <!-- View All Services Button -->
+        <div class="text-center mt-8 sm:mt-10 md:mt-12">
+          <button
+            class="px-6 sm:px-8 md:px-10 py-3 sm:py-4 bg-[#ecc450] text-white font-semibold rounded-[3px] hover:bg-yellow-500 transition-all text-sm sm:text-base"
+          >
+            View All Services
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Recent Listings Section -->
+    <section id="recent-listings" class="py-8 sm:py-10 md:py-12 lg:py-16">
+      <div class="max-w-7xl mx-auto px-4 sm:px-4 lg:px-6">
+        <!-- Section Header -->
+        <div class="text-center mb-8 sm:mb-10 md:mb-12">
+          <h2 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-800">Recent Listings</h2>
+        </div>
+
+        <!-- Listings Grid -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-4">
+          <!-- Listing 1 -->
+          <div class="group cursor-pointer">
+            <div class="relative rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 bg-white">
+              <div class="aspect-[16/10] relative overflow-hidden">
+                <img
+                  src="images/desktop/modern-house.png"
+                  alt="Modern House"
+                  class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                />
+
+                <!-- Overlay Info Card for Recent Listings  -->
+                <div
+                  class="absolute bottom-0 left-0 right-0 h-1/2 bg-[#292C2D] bg-opacity-95 text-white p-4 rounded-b-lg transform translate-y-full group-hover:translate-y-0 transition-all duration-500 ease-out flex"
+                >
+                  <div class="flex justify-between items-center w-full">
+                    <div class="flex-1 md:space-y-1">
+                      <!-- Price -->
+                      <div class="text-[#ecc450] font-semibold sm:text-sm md:text-sm lg:text-lg">$584,311</div>
+
+                      <!-- Specs line -->
+                      <div class="text-white/90 sm:text-xs md:text-xs lg:text-xs">
+                        5 bds | 5 ba | 3,798 sqft - New Construction
+                      </div>
+
+                      <!-- Address -->
+                      <div class="text-white/80 sm:text-xs md:text-xs lg:text-xs">28534 Nova Beach Dr, Texas City, TX 68463</div>
+
+                      <!-- Agent -->
+                      <div class="text-white/90 sm:text-xs md:text-xs lg:text-xs">Westin Homes</div>
+                    </div>
+
+                    <!-- Arrow Icon -->
+                    <div class="flex items-center">
+                      <img src="images/desktop/arrow_share.svg" alt="arrow share" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Listing 2 -->
+          <div class="group cursor-pointer">
+            <div class="relative rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 bg-white">
+              <div class="aspect-[16/10] relative overflow-hidden">
+                <img
+                  src="images/desktop/contemporary-home.png"
+                  alt="Contemporary Home"
+                  class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                />
+                <!-- Overlay Info Card for Recent Listings  -->
+                <div
+                  class="absolute bottom-0 left-0 right-0 h-1/2 bg-[#292C2D] bg-opacity-95 text-white p-4 rounded-b-lg transform translate-y-full group-hover:translate-y-0 transition-all duration-500 ease-out flex"
+                >
+                  <div class="flex justify-between items-center w-full">
+                    <div class="flex-1 md:space-y-1">
+                      <!-- Price -->
+                      <div class="text-[#ecc450] font-semibold sm:text-sm md:text-sm lg:text-lg">$584,311</div>
+
+                      <!-- Specs line -->
+                      <div class="text-white/90 sm:text-xs md:text-xs lg:text-xs">
+                        5 bds | 5 ba | 3,798 sqft - New Construction
+                      </div>
+
+                      <!-- Address -->
+                      <div class="text-white/80 sm:text-xs md:text-xs lg:text-xs">28534 Nova Beach Dr, Texas City, TX 68463</div>
+
+                      <!-- Agent -->
+                      <div class="text-white/90 sm:text-xs md:text-xs lg:text-xs">Westin Homes</div>
+                    </div>
+
+                    <!-- Arrow Icon -->
+                    <div class="flex items-center">
+                      <img src="images/desktop/arrow_share.svg" alt="arrow share" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Listing 3 -->
+          <div class="group cursor-pointer">
+            <div class="relative rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 bg-white">
+              <div class="aspect-[16/10] relative overflow-hidden">
+                <img
+                  src="images/desktop/luxury-villa.png"
+                  alt="Luxury Villa"
+                  class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                />
+                <!-- Overlay Info Card for Recent Listings  -->
+                <div
+                  class="absolute bottom-0 left-0 right-0 h-1/2 bg-[#292C2D] bg-opacity-95 text-white p-4 rounded-b-lg transform translate-y-full group-hover:translate-y-0 transition-all duration-500 ease-out flex"
+                >
+                  <div class="flex justify-between items-center w-full">
+                    <div class="flex-1 md:space-y-1">
+                      <!-- Price -->
+                      <div class="text-[#ecc450] font-semibold sm:text-sm md:text-sm lg:text-lg">$584,311</div>
+
+                      <!-- Specs line -->
+                      <div class="text-white/90 sm:text-xs md:text-xs lg:text-xs">
+                        5 bds | 5 ba | 3,798 sqft - New Construction
+                      </div>
+
+                      <!-- Address -->
+                      <div class="text-white/80 sm:text-xs md:text-xs lg:text-xs">28534 Nova Beach Dr, Texas City, TX 68463</div>
+
+                      <!-- Agent -->
+                      <div class="text-white/90 sm:text-xs md:text-xs lg:text-xs">Westin Homes</div>
+                    </div>
+
+                    <!-- Arrow Icon -->
+                    <div class="flex items-center">
+                      <img src="images/desktop/arrow_share.svg" alt="arrow share" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Listing 4 -->
+          <div class="group cursor-pointer">
+            <div class="relative rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 bg-white">
+              <div class="aspect-[16/10] relative overflow-hidden">
+                <img
+                  src="images/desktop/classic-estate.png"
+                  alt="Classic Estate"
+                  class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                />
+                <!-- Overlay Info Card for Recent Listings  -->
+                <div
+                  class="absolute bottom-0 left-0 right-0 h-1/2 bg-[#292C2D] bg-opacity-95 text-white p-4 rounded-b-lg transform translate-y-full group-hover:translate-y-0 transition-all duration-500 ease-out flex"
+                >
+                  <div class="flex justify-between items-center w-full">
+                    <div class="flex-1 md:space-y-1">
+                      <!-- Price -->
+                      <div class="text-[#ecc450] font-semibold sm:text-sm md:text-sm lg:text-lg">$584,311</div>
+
+                      <!-- Specs line -->
+                      <div class="text-white/90 sm:text-xs md:text-xs lg:text-xs">
+                        5 bds | 5 ba | 3,798 sqft - New Construction
+                      </div>
+
+                      <!-- Address -->
+                      <div class="text-white/80 sm:text-xs md:text-xs lg:text-xs">28534 Nova Beach Dr, Texas City, TX 68463</div>
+
+                      <!-- Agent -->
+                      <div class="text-white/90 sm:text-xs md:text-xs lg:text-xs">Westin Homes</div>
+                    </div>
+
+                    <!-- Arrow Icon -->
+                    <div class="flex items-center">
+                      <img src="images/desktop/arrow_share.svg" alt="arrow share" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Listing 5 -->
+          <div class="group cursor-pointer">
+            <div class="relative rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 bg-white">
+              <div class="aspect-[16/10] relative overflow-hidden">
+                <img
+                  src="images/desktop/modern-mansion.png"
+                  alt="Modern Mansion"
+                  class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                />
+                <!-- Overlay Info Card for Recent Listings  -->
+                <div
+                  class="absolute bottom-0 left-0 right-0 h-1/2 bg-[#292C2D] bg-opacity-95 text-white p-4 rounded-b-lg transform translate-y-full group-hover:translate-y-0 transition-all duration-500 ease-out flex"
+                >
+                  <div class="flex justify-between items-center w-full">
+                    <div class="flex-1 md:space-y-1">
+                      <!-- Price -->
+                      <div class="text-[#ecc450] font-semibold sm:text-sm md:text-sm lg:text-lg">$584,311</div>
+
+                      <!-- Specs line -->
+                      <div class="text-white/90 sm:text-xs md:text-xs lg:text-xs">
+                        5 bds | 5 ba | 3,798 sqft - New Construction
+                      </div>
+
+                      <!-- Address -->
+                      <div class="text-white/80 sm:text-xs md:text-xs lg:text-xs">28534 Nova Beach Dr, Texas City, TX 68463</div>
+
+                      <!-- Agent -->
+                      <div class="text-white/90 sm:text-xs md:text-xs lg:text-xs">Westin Homes</div>
+                    </div>
+
+                    <!-- Arrow Icon -->
+                    <div class="flex items-center">
+                      <img src="images/desktop/arrow_share.svg" alt="arrow share" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Empty cell for layout balance -->
+          <div class="hidden lg:block"></div>
+        </div>
+
+        <!-- View All Listings Button -->
+        <div class="text-center mt-8 sm:mt-10 md:mt-12">
+          <button
+            class="px-6 sm:px-8 md:px-10 py-3 sm:py-4 bg-[#ecc450] text-white font-semibold rounded-[3px] hover:bg-yellow-500 transition-all text-sm sm:text-base"
+          >
+            View All Listings
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Sign Up Section -->
+    <section id="why-signup" class="py-12 sm:py-16 md:py-20 lg:py-24">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <!-- Section Header -->
+        <div class="text-center mb-10 sm:mb-12 md:mb-16">
+          <h2 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-[#292C2D] mb-4">Why sign up with ETA07</h2>
+          <p class="text-gray-600 text-sm sm:text-base md:text-lg max-w-3xl mx-auto px-4">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna
+            aliqua.
+          </p>
+        </div>
+
+        <!-- Features Grid -->
+        <div class="grid grid-cols-1 sm:grid-cols-1 lg:grid-cols-3 gap-8 sm:gap-10 md:gap-12 mb-12 sm:mb-16">
+          <!-- Secure Shopping -->
+          <div class="text-center">
+            <div
+              class="w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 bg-[#ecc450] rounded-lg mx-auto mb-4 sm:mb-6 flex items-center justify-center"
+            >
+              <svg class="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 text-white" fill="currentColor" viewBox="0 0 24 24">
+                <path
+                  d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 10.99h7c-.53 4.12-3.28 7.79-7 8.94V12H5V6.3l7-3.11v8.8z"
+                />
+              </svg>
+            </div>
+            <h3 class="text-lg sm:text-xl md:text-2xl font-semibold text-[#292C2D] mb-3">Secure Shopping</h3>
+            <p class="text-gray-600 text-sm sm:text-base px-4 sm:px-6">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut
+            </p>
+          </div>
+
+          <!-- Customer Satisfaction -->
+          <div class="text-center">
+            <div
+              class="w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 bg-[#ecc450] rounded-lg mx-auto mb-4 sm:mb-6 flex items-center justify-center"
+            >
+              <svg class="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 text-white" fill="currentColor" viewBox="0 0 24 24">
+                <path
+                  d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"
+                />
+              </svg>
+            </div>
+            <h3 class="text-lg sm:text-xl md:text-2xl font-semibold text-[#292C2D] mb-3">Customer Satisfaction</h3>
+            <p class="text-gray-600 text-sm sm:text-base px-4 sm:px-6">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut
+            </p>
+          </div>
+
+          <!-- Support -->
+          <div class="text-center">
+            <div
+              class="w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 bg-[#ecc450] rounded-lg mx-auto mb-4 sm:mb-6 flex items-center justify-center"
+            >
+              <svg class="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 text-white" fill="currentColor" viewBox="0 0 24 24">
+                <path
+                  d="M20 2H4c-1.1 0-1.99.9-1.99 2L2 22l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-7 12h-2v-2h2v2zm0-4h-2V6h2v4z"
+                />
+              </svg>
+            </div>
+            <h3 class="text-lg sm:text-xl md:text-2xl font-semibold text-[#292C2D] mb-3">Support</h3>
+            <p class="text-gray-600 text-sm sm:text-base px-4 sm:px-6">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut
+            </p>
+          </div>
+        </div>
+
+        <!-- Second Row - Centered -->
+        <div class="grid grid-cols-1 sm:grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 md:gap-12 max-w-2xl mx-auto">
+          <!-- Free Shipping -->
+          <div class="text-center">
+            <div
+              class="w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 bg-[#ecc450] rounded-lg mx-auto mb-4 sm:mb-6 flex items-center justify-center"
+            >
+              <svg class="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 text-white" fill="currentColor" viewBox="0 0 24 24">
+                <path
+                  d="M18 18.5a1.5 1.5 0 01-1.5-1.5 1.5 1.5 0 011.5-1.5 1.5 1.5 0 011.5 1.5 1.5 1.5 0 01-1.5 1.5m1.5-9l1.96 2.5H17V9.5m-11 9A1.5 1.5 0 014.5 17 1.5 1.5 0 016 15.5 1.5 1.5 0 017.5 17 1.5 1.5 0 016 18.5M20 8h-3V4H3c-1.11 0-2 .89-2 2v11h2a3 3 0 003 3 3 3 0 003-3h6a3 3 0 003 3 3 3 0 003-3h2v-5l-3-4z"
+                />
+              </svg>
+            </div>
+            <h3 class="text-lg sm:text-xl md:text-2xl font-semibold text-[#292C2D] mb-3">Free Shipping</h3>
+            <p class="text-gray-600 text-sm sm:text-base px-4 sm:px-6">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut
+            </p>
+          </div>
+
+          <!-- Secure Transaction -->
+          <div class="text-center">
+            <div
+              class="w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 bg-[#ecc450] rounded-lg mx-auto mb-4 sm:mb-6 flex items-center justify-center"
+            >
+              <svg class="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 text-white" fill="currentColor" viewBox="0 0 24 24">
+                <path
+                  d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z"
+                />
+              </svg>
+            </div>
+            <h3 class="text-lg sm:text-xl md:text-2xl font-semibold text-[#292C2D] mb-3">Secure Transaction</h3>
+            <p class="text-gray-600 text-sm sm:text-base px-4 sm:px-6">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer id="footer" class="bg-[#292C2D] text-white mt-[10px]">
+      <div class="max-w-7xl mx-auto px-4 sm:px-4 lg:px-6 py-8">
+        <!-- Main Footer Content -->
+        <div class="grid grid-cols-1 sm:grid-cols-3 sm:gap-5 md:grid-cols-4 lg:grid-cols-4 gap-8 lg:gap-10 pt-8">
+          <!-- Logo Section -->
+          <div class="col-span-1 sm:col-span-3 md:col-span-1 lg:col-span-1">
+            <div class="mb-6">
+              <!-- Logo -->
+              <img
+                src="images/desktop/logo-footer.svg"
+                alt="ETA07 logo"
+                class="h-8 sm:h-9 md:h-10 lg:h-12 xl:h-14 w-auto object-contain transition-all cursor-pointer"
+              />
+            </div>
+          </div>
+
+          <!-- Menu Section -->
+          <div class="col-span-1">
+            <h3 class="text-[#ecc450] text-lg sm:text-xl font-semibold mb-4">Menu</h3>
+            <ul class="space-y-3 sm:space-y-4">
+              <li>
+                <a href="#" class="text-[#ffffff] hover:text-gray-400 transition-colors text-sm sm:text-base"> Shop Products </a>
+              </li>
+              <li>
+                <a href="#" class="text-[#ffffff] hover:text-gray-400 transition-colors text-sm sm:text-base"> Shop Services </a>
+              </li>
+              <li>
+                <a href="#" class="text-[#ffffff] hover:text-gray-400 transition-colors text-sm sm:text-base"> Memberships </a>
+              </li>
+              <li>
+                <a href="#" class="text-[#ffffff] hover:text-gray-400 transition-colors text-sm sm:text-base">
+                  Agent Referrals
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Legal Section -->
+          <div class="col-span-1">
+            <h3 class="text-[#ecc450] text-lg sm:text-xl font-semibold mb-4">Legal</h3>
+            <ul class="space-y-3 sm:space-y-4">
+              <li>
+                <a href="#" class="text-[#ffffff] hover:text-gray-400 transition-colors text-sm sm:text-base"> Privacy Policy </a>
+              </li>
+              <li>
+                <a href="#" class="text-[#ffffff] hover:text-gray-400 transition-colors text-sm sm:text-base">
+                  Copyright Information
+                </a>
+              </li>
+              <li>
+                <a href="#" class="text-[#ffffff] hover:text-gray-400 transition-colors text-sm sm:text-base"> Cookie Policy </a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Get in Touch Section -->
+          <div class="col-span-1 sm:justify-self-end md:justify-self-end lg:justify-self-end">
+            <h3 class="text-[#ecc450] text-lg sm:text-xl font-semibold mb-4">Get in Touch</h3>
+            <div class="flex space-x-5">
+              <!-- Facebook -->
+              <a href="#" class="">
+                <img src="images/desktop/facebook.svg" alt="Facebook" class="w-6 h-6 sm:w-7 sm:h-7" />
+              </a>
+
+              <!-- X (Twitter) -->
+              <a href="#" class="">
+                <img src="images/desktop/x.svg" alt="X" class="w-6 h-6 sm:w-7 sm:h-7" />
+              </a>
+
+              <!-- YouTube -->
+              <a href="#" class="">
+                <img src="images/desktop/youtube.svg" alt="Youtube" class="w-6 h-6 sm:w-7 sm:h-7" />
+              </a>
+
+              <!-- LinkedIn -->
+              <a href="#" class="">
+                <img src="images/desktop/linkedin.svg" alt="LinkedIn" class="w-6 h-6 sm:w-7 sm:h-7" />
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Divider -->
+        <div class="border-t border-[#ffffff] mt-8"></div>
+
+        <!-- Copyright -->
+        <div class="mt-6 sm:mt-8 text-center">
+          <p class="text-[#ffffff] text-sm sm:text-base">Copyright © 2023 Eta07 LLC. All Rights Reserved</p>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      // Add interactivity for dropd owns if needed
+      document.addEventListener("DOMContentLoaded", function () {
+        // Toggle mobile menu or dropdowns
+        const dropdownButtons = document.querySelectorAll('button[class*="flex items-center"]');
+
+        dropdownButtons.forEach((button) => {
+          button.addEventListener("click", function (e) {
+            // Add dropdown logic here if needed
+            console.log("Dropdown clicked");
+          });
+        });
+      });
+    </script>
+  </body>
+</html>
