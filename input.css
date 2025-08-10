@@ -8,34 +8,42 @@
   }
 }
 
+/*  */
+:root[style*="overflow: hidden"] {
+  overflow: auto !important;
+  padding-right: 0 !important;
+}
+
+/* Filter to convert image to #ecc450 color on hover */
+.group:hover .hover-filter {
+  filter: brightness(0) saturate(100%) invert(84%) sepia(31%) saturate(1352%) hue-rotate(8deg) brightness(98%) contrast(88%);
+}
+
+/* Smooth transition for the filter */
+.hover-filter {
+  transition: filter 0.3s ease;
+}
+
 /* Hamburger Menu */
 .hamburger {
   cursor: pointer;
-  width: 24px;
-  height: 24px;
+  width: 20px;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 4px;
   transition: all 0.25s;
-  position: relative;
 }
 
 .hamburger-top,
 .hamburger-middle,
 .hamburger-bottom {
-  position: absolute;
-  width: 24px;
+  width: 20px;
   height: 2px;
-  top: 0;
-  left: 0;
-  background: #fff;
-  transform: rotate(0);
-  transition: all 0.5s;
-}
-
-.hamburger-middle {
-  transform: translateY(7px);
-}
-
-.hamburger-bottom {
-  transform: translateY(14px);
+  background: #fffff0;
+  border-radius: 1px; /* smooth edges */
+  transition: all 0.5s ease;
 }
 
 .open {
@@ -43,13 +51,13 @@
 }
 
 .open .hamburger-top {
-  transform: rotate(45deg) translateY(6px) translateX(6px);
+  transform: rotate(45deg) translate(4px, 4px);
 }
 
 .open .hamburger-middle {
-  display: none;
+  opacity: 0;
 }
 
 .open .hamburger-bottom {
-  transform: rotate(-45deg) translateY(6px) translateX(-6px);
+  transform: rotate(-45deg) translate(4px, -4px);
 }
