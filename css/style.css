@@ -574,6 +574,10 @@ html {
   position: relative;
 }
 
+.sticky {
+  position: sticky;
+}
+
 .inset-0 {
   inset: 0px;
 }
@@ -628,6 +632,22 @@ html {
 
 .z-\[60\] {
   z-index: 60;
+}
+
+.z-20 {
+  z-index: 20;
+}
+
+.z-\[1000\] {
+  z-index: 1000;
+}
+
+.z-\[50\] {
+  z-index: 50;
+}
+
+.z-\[9999\] {
+  z-index: 9999;
 }
 
 .col-span-1 {
@@ -788,6 +808,14 @@ html {
   height: 100%;
 }
 
+.h-3\/4 {
+  height: 75%;
+}
+
+.h-\[400px\] {
+  height: 400px;
+}
+
 .min-h-\[250px\] {
   min-height: 250px;
 }
@@ -846,6 +874,10 @@ html {
 
 .w-px {
   width: 1px;
+}
+
+.w-3\/4 {
+  width: 75%;
 }
 
 .min-w-0 {
@@ -1019,6 +1051,10 @@ html {
   overflow-x: auto;
 }
 
+.scroll-smooth {
+  scroll-behavior: smooth;
+}
+
 .whitespace-nowrap {
   white-space: nowrap;
 }
@@ -1056,12 +1092,20 @@ html {
   border-width: 1px;
 }
 
+.border-2 {
+  border-width: 2px;
+}
+
 .border-r {
   border-right-width: 1px;
 }
 
 .border-t {
   border-top-width: 1px;
+}
+
+.border-dashed {
+  border-style: dashed;
 }
 
 .border-\[\#292C2D\] {
@@ -1086,6 +1130,10 @@ html {
 .border-gray-200 {
   --tw-border-opacity: 1;
   border-color: rgb(229 231 235 / var(--tw-border-opacity, 1));
+}
+
+.border-white\/30 {
+  border-color: rgb(255 255 255 / 0.3);
 }
 
 .bg-\[\#292C2D\] {
@@ -1130,6 +1178,10 @@ html {
 
 .bg-\[\#292C2\] {
   background-color: #292C2;
+}
+
+.bg-white\/20 {
+  background-color: rgb(255 255 255 / 0.2);
 }
 
 .bg-opacity-95 {
@@ -1384,6 +1436,10 @@ html {
   color: rgb(255 255 255 / 0.9);
 }
 
+.text-white\/60 {
+  color: rgb(255 255 255 / 0.6);
+}
+
 .line-through {
   text-decoration-line: line-through;
 }
@@ -1570,6 +1626,11 @@ html {
 .hover\:bg-yellow-500:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(234 179 8 / var(--tw-bg-opacity, 1));
+}
+
+.hover\:bg-gray-800:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(31 41 55 / var(--tw-bg-opacity, 1));
 }
 
 .hover\:text-\[\#ecc450\]:hover {
@@ -2204,6 +2265,10 @@ html {
 
   .lg\:min-h-\[600px\] {
     min-height: 600px;
+  }
+
+  .lg\:min-h-\[400px\] {
+    min-height: 400px;
   }
 
   .lg\:w-1\/2 {

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -16,7 +16,7 @@
   </head>
   <body class="">
     <!-- TOP NAVIGATION BAR -->
-    <nav class="bg-[#292C2D] text-[#fffff0]">
+    <nav class="bg-[#292C2D] text-[#fffff0]" id="top">
       <div class="max-w-7xl mx-auto px-3 sm:px-4 md:px-5 lg:px-6">
         <div class="flex items-center justify-between h-10 sm:h-11 md:h-12">
           <!-- Left Navigation Links -->
@@ -67,7 +67,7 @@
 
           <!-- Hamburger Button (always visible on mobile) -->
           <div class="md:hidden">
-            <button id="menu-btn" type="button" class="relative z-[60] block hamburger focus:outline-none">
+            <button id="menu-btn" type="button" class="relative z-[9999] block hamburger focus:outline-none">
               <span class="hamburger-top"></span>
               <span class="hamburger-middle"></span>
               <span class="hamburger-bottom"></span>
@@ -101,7 +101,7 @@
           <!-- MOBILE MENU OVERLAY (hidden by default) -->
           <div
             id="menu"
-            class="hidden fixed inset-0 z-50 bg-[#292C2D] text-[#fffff0] flex-col items-center justify-center space-y-8 text-2xl"
+            class="hidden fixed inset-0 z-[1000] bg-[#292C2D] text-[#fffff0] flex-col items-center justify-center space-y-8 text-2xl"
           >
             <a href="#" class="hover:text-[#ecc450]">Browse</a>
             <a href="#" class="hover:text-[#ecc450] whitespace-nowrap">ETA Direct</a>
@@ -112,17 +112,19 @@
     </nav>
 
     <!-- MAIN HEADER WITH SEARCH -->
-    <header class="bg-white sm:bg-gray-50 shadow-sm">
+    <header class="bg-white sm:bg-gray-50 shadow-sm sticky top-0 z-50">
       <div class="max-w-7xl mx-auto px-3 sm:px-4 md:px-5 lg:px-6 py-2.5 sm:py-3 md:py-4 lg:py-5">
         <!-- Logo and Search in same row -->
         <div class="flex flex-row items-center gap-2 sm:gap-3 md:gap-4 lg:gap-6">
           <!-- Logo -->
           <div class="flex items-center flex-shrink-0">
-            <img
-              src="images/desktop/logo-nav.svg"
-              alt="ETA07 Logo"
-              class="h-8 sm:h-9 md:h-10 lg:h-12 xl:h-14 w-auto object-contain transition-all cursor-pointer"
-            />
+            <a href="#top">
+              <img
+                src="images/desktop/logo-nav.svg"
+                alt="ETA07 Logo"
+                class="h-8 sm:h-9 md:h-10 lg:h-12 xl:h-14 w-auto object-contain transition-all cursor-pointer"
+              />
+            </a>
           </div>
 
           <!-- Shop by Category Dropdown - Desktop only -->
@@ -1059,6 +1061,54 @@
             <p class="text-gray-600 text-sm sm:text-base px-4 sm:px-6">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut
             </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CREDIT REPORT SIGNUP SECTION -->
+    <section id="credit-signup">
+      <!-- Full Width Background Container -->
+      <div class="bg-[#ecc450] rounded-[8px] overflow-hidden">
+        <!-- Content Container with max-width -->
+        <div class="max-w-7xl mx-auto">
+          <div
+            class="relative flex flex-col lg:flex-row items-center min-h-[250px] sm:min-h-[200px] md:min-h-[350px] lg:min-h-[400px]"
+          >
+            <!-- Left Content -->
+            <div class="w-full lg:w-1/2 px-5 py-10 sm:py-12 md:py-14 lg:py-0 z-10">
+              <h2 class="text-2xl sm:text-3xl md:text-4xl lg:text-4xl xl:text-5xl font-bold mb-4 sm:mb-5 md:mb-6 leading-tight">
+                <span class="text-[#292C2D]">Signup for free Credit</span>
+                <br class="hidden sm:block" />
+                <span class="text-white">Report and Score</span>
+              </h2>
+
+              <p class="text-[#292C2D] text-sm sm:text-base md:text-sm mb-6 sm:mb-8 max-w-lg">
+                Get your free credit report and monitor your credit score with our trusted partners. Stay informed about your
+                financial health.
+              </p>
+
+              <!-- CTA Button -->
+              <div class="flex flex-col sm:flex-row gap-3 sm:gap-4">
+                <button
+                  class="px-5 sm:px-6 md:px-8 py-2.5 sm:py-3 md:py-4 bg-[#292C2D] text-white font-semibold rounded-[3px] hover:bg-gray-800 transition-all text-sm sm:text-base flex items-center justify-center gap-2"
+                >
+                  Signup
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                  </svg>
+                </button>
+              </div>
+            </div>
+
+            <!-- Right Content - Placeholder for Image -->
+            <div class="hidden lg:block w-full lg:w-1/2 relative h-[400px]">
+              <img
+                src="images/desktop/credit.png"
+                alt=""
+                class="absolute h-full w-auto object-contain object-bottom pt-8 right-0"
+              />
+            </div>
           </div>
         </div>
       </div>
