@@ -12,6 +12,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/iconify/3.1.1/iconify.min.js"></script>
     <!-- Tailwind CSS Plus Elements for Dropdown -->
     <script src="https://cdn.jsdelivr.net/npm/@tailwindplus/elements@1" type="module"></script>
+    <!-- Linking  Swiper JS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <!-- CSS style -->
     <link rel="stylesheet" href="css/style.css" />
     <title>ETA07</title>
   </head>
@@ -166,17 +169,21 @@
 
                 <!-- Category Dropdown Button with Tailwind CSS Plus -->
                 <el-dropdown class="flex items-center group">
-                  <button class="flex items-center px-2 md:px-3 lg:px-5 bg-white transition-colors flex-shrink-0 relative">
+                  <button
+                    class="flex items-center px-2 md:px-3 lg:px-5 bg-white transition-colors flex-shrink-0 relative"
+                    type="button"
+                  >
                     <span class="text-gray-600 text-xs md:text-sm lg:text-base whitespace-nowrap mr-1 md:mr-2 lg:mr-2 lg:px-4">
                       All Categories
                     </span>
+                    <!-- Rotate when the popover (menu) is open -->
                     <svg
-                      class="w-3.5 h-3.5 md:w-4 md:h-4 lg:w-5 lg:h-5 text-gray-600 flex-shrink-0"
+                      class="w-3.5 h-3.5 md:w-4 md:h-4 lg:w-5 lg:h-5 text-gray-600 flex-shrink-0 transition-transform duration-200"
                       fill="none"
                       stroke="currentColor"
                       viewBox="0 0 24 24"
                     >
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
                     </svg>
                   </button>
 
@@ -597,7 +604,7 @@
     </section>
 
     <!-- POPULAR SERVICES SECTION -->
-    <section id="service-categories" class="py-8 sm:py-10 md:py-12 lg:py-16">
+    <section id="popular-services" class="py-8 sm:py-10 md:py-12 lg:py-16">
       <div class="max-w-7xl mx-auto px-4 sm:px-4 lg:px-6">
         <!-- Section Header -->
         <div class="text-center mb-8 sm:mb-10 md:mb-12">
@@ -606,62 +613,75 @@
           </h2>
         </div>
 
-        <!-- Services Carousel Container -->
+        <!-- Services Swiper Container -->
         <div class="relative">
-          <!-- Services Grid/Carousel -->
-          <div
-            class="flex gap-4 sm:gap-4 md:gap-4 overflow-x-auto pb-4 scrollbar-hide"
-            style="scrollbar-width: none; -ms-overflow-style: none"
-          >
-            <!-- Cable & Internet Service -->
-            <div class="flex-shrink-0 w-[280px] sm:w-[300px] md:w-[320px] lg:w-[340px]">
-              <div class="bg-[#ecc450] rounded-lg p-4 sm:p-5 md:p-6 h-full">
-                <h3 class="text-white font-semibold text-lg sm:text-xl md:text-2xl mb-4">Cable & Internet</h3>
-                <div class="bg-white rounded-lg overflow-hidden aspect-[4/3]">
-                  <img src="images/desktop/internet.png" alt="Cable & Internet" class="w-full h-full object-cover" />
-                </div>
+          <div class="swiper servicesSwiper">
+            <div class="swiper-wrapper">
+              <!-- Service 1 - Cable & Internet -->
+              <div class="swiper-slide bg-[#ecc450] rounded-lg p-5 sm:h-96 md:h-[380px] flex flex-col">
+                <h3 class="text-white text-xl sm:text-xl md:text-xl sm:mb-6">Cable & Internet</h3>
+                <img
+                  src="images/desktop/internet.png"
+                  alt="Cable & Internet Services"
+                  class="h-[250px] w-full object-cover mt-auto rounded-[3px]"
+                />
+              </div>
+
+              <!-- Service 2 - Healthcare -->
+              <div class="swiper-slide bg-[#ecc450] rounded-lg p-5 sm:h-96 md:h-[380px] flex flex-col">
+                <h3 class="text-white text-xl sm:text-xl md:text-xl mb-4 sm:mb-6">Healthcare & Services</h3>
+                <img
+                  src="images/desktop/healthcare.png"
+                  alt="Healthcare & Services"
+                  class="h-[250px] w-full object-cover mt-auto rounded-[3px]"
+                />
+              </div>
+
+              <!-- Service 3 - Medical Testing -->
+              <div class="swiper-slide bg-[#ecc450] rounded-lg p-5 sm:h-96 md:h-[380px] flex flex-col">
+                <h3 class="text-white text-xl sm:text-xl md:text-xl mb-4 sm:mb-6">Medical Testing</h3>
+                <img
+                  src="images/desktop/medical-testing.png"
+                  alt="Medical Testing"
+                  class="h-[250px] w-full object-cover mt-auto rounded-[3px]"
+                />
+              </div>
+
+              <!-- Service 4 - Financial Services -->
+              <div class="swiper-slide bg-[#ecc450] rounded-lg p-5 sm:h-96 md:h-[380px] flex flex-col">
+                <h3 class="text-white text-xl sm:text-xl md:text-xl mb-4 sm:mb-6">Financial Services</h3>
+                <img
+                  src="images/desktop/financial-services.png"
+                  alt="Financial Services"
+                  class="h-[250px] w-full object-cover mt-auto rounded-[3px]"
+                />
+              </div>
+
+              <!-- Service 5 - Home Improvement  -->
+              <div class="swiper-slide bg-[#ecc450] rounded-lg p-5 sm:h-96 md:h-[380px] flex flex-col">
+                <h3 class="text-white text-xl sm:text-xl md:text-xl mb-4 sm:mb-6">Home Improvement</h3>
+                <img
+                  src="images/desktop/modern-mansion.png"
+                  alt="Home"
+                  class="h-[250px] w-full object-cover mt-auto rounded-[3px]"
+                />
+              </div>
+
+              <!-- Service 6 - Automotive -->
+              <div class="swiper-slide bg-[#ecc450] rounded-lg p-5 sm:h-96 md:h-[380px] flex flex-col">
+                <h3 class="text-white text-xl sm:text-xl md:text-xl mb-4 sm:mb-6">Automotive</h3>
+                <img
+                  src="https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80.png"
+                  alt="Automotive"
+                  class="h-[250px] w-full object-cover mt-auto rounded-[3px]"
+                />
               </div>
             </div>
 
-            <!-- Healthcare Service -->
-            <div class="flex-shrink-0 w-[280px] sm:w-[300px] md:w-[320px] lg:w-[340px]">
-              <div class="bg-[#ecc450] rounded-lg p-4 sm:p-5 md:p-6 h-full">
-                <h3 class="text-white font-semibold text-lg sm:text-xl md:text-2xl mb-4">Healthcare</h3>
-                <div class="bg-white rounded-lg overflow-hidden aspect-[4/3]">
-                  <img src="images/desktop/healthcare.png" alt="Healthcare" class="w-full h-full object-cover" />
-                </div>
-              </div>
-            </div>
-
-            <!-- Medical Testing Service -->
-            <div class="flex-shrink-0 w-[280px] sm:w-[300px] md:w-[320px] lg:w-[340px]">
-              <div class="bg-[#ecc450] rounded-lg p-4 sm:p-5 md:p-6 h-full">
-                <h3 class="text-white font-semibold text-lg sm:text-xl md:text-2xl mb-4">Medical Testing</h3>
-                <div class="bg-white rounded-lg overflow-hidden aspect-[4/3]">
-                  <img src="images/desktop/medical-testing.png" alt="Medical Testing" class="w-full h-full object-cover" />
-                </div>
-              </div>
-            </div>
-
-            <!-- Financial Services -->
-            <div class="flex-shrink-0 w-[280px] sm:w-[300px] md:w-[320px] lg:w-[340px]">
-              <div class="bg-[#ecc450] rounded-lg p-4 sm:p-5 md:p-6 h-full">
-                <h3 class="text-white font-semibold text-lg sm:text-xl md:text-2xl mb-4">Financial Services</h3>
-                <div class="bg-white rounded-lg overflow-hidden aspect-[4/3]">
-                  <img src="images/desktop/financial-services.png" alt="Financial Services" class="w-full h-full object-cover" />
-                </div>
-              </div>
-            </div>
+            <!-- Navigation buttons -->
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
           </div>
-
-          <!-- Navigation Arrow - Right (for desktop) -->
-          <button
-            class="hidden lg:flex absolute right-0 top-1/2 transform -translate-y-1/2 translate-x-1/2 bg-white rounded-full p-3 shadow-lg hover:shadow-xl transition-all items-center justify-center z-10"
-          >
-            <svg class="w-6 h-6 text-[#292C2D]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"></path>
-            </svg>
-          </button>
         </div>
       </div>
     </section>
@@ -1240,6 +1260,9 @@
       </div>
     </footer>
 
+    <!-- Linking Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
     <script>
       // For mobile menu
       const btn = document.getElementById("menu-btn");
@@ -1259,6 +1282,24 @@
           document.body.style.overflow = "";
         }
       }
+
+      // Swiper Function
+      document.addEventListener("DOMContentLoaded", function () {
+        const servicesSwiper = new Swiper(".servicesSwiper", {
+          slidesPerView: 1,
+          spaceBetween: 12,
+          loop: true,
+          autoplay: true,
+          delay: 3000,
+          disableOnInteraction: false,
+          navigation: { nextEl: ".swiper-button-next", prevEl: ".swiper-button-prev" },
+          breakpoints: {
+            640: { slidesPerView: 2, spaceBetween: 16 },
+            768: { slidesPerView: 3, spaceBetween: 16 },
+            1024: { slidesPerView: 4, spaceBetween: 16 },
+          },
+        });
+      });
     </script>
   </body>
 </html>
