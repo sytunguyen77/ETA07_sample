@@ -181,7 +181,7 @@
       </div>
     </header>
 
-    <!-- LOGIN FORM SECTION -->
+    <!-- REGISTER FORM SECTION -->
     <div class="bg-gray-50 min-h-[calc(100vh-100px)] flex items-center justify-center px-4 py-8">
       <div class="w-full max-w-7xl mx-auto">
         <div class="flex flex-col lg:flex-row justify-evenly items-center gap-8 lg:gap-10">
@@ -228,35 +228,27 @@
           <div class="w-full lg:w-[480px] bg-[#ffffff] rounded-[3px] shadow-xl lg:shadow-md p-8 lg:p-7">
             <!-- Login Header -->
             <div id="loginHeader" class="mb-8">
-              <h1 class="text-3xl lg:text-4xl font-semibold text-gray-900 mb-3">Login</h1>
+              <h1 class="text-3xl lg:text-4xl font-semibold text-gray-900 mb-3">Register</h1>
               <p class="text-gray-600">
-                Don't have an account?
-                <a href="register.html" class="text-[#ecc450] hover:text-yellow-500 transition-colors ml-1 underline">Sign up</a>
+                Already have an account?
+                <a href="login.html" class="text-[#ecc450] hover:text-yellow-500 transition-colors ml-1 underline">Login</a>
               </p>
-            </div>
-
-            <!-- Toggle Buttons -->
-            <div id="toggleButtons" class="flex justify-center mb-8">
-              <div class="inline-flex p-0.5 bg-white border-2 border-[#ecc450] rounded-full">
-                <button
-                  id="loginBtn"
-                  class="px-8 py-2.5 bg-[#ecc450] text-white font-medium rounded-full transition-all duration-300"
-                  onclick="showLoginForm()"
-                >
-                  Login
-                </button>
-                <button
-                  id="guestBtn"
-                  class="px-8 py-2.5 bg-transparent text-gray-700 font-medium rounded-full transition-all duration-300"
-                  onclick="showGuestForm()"
-                >
-                  Guest Checkout
-                </button>
-              </div>
             </div>
 
             <!-- Login Form -->
             <form id="loginForm" class="space-y-6">
+              <!-- Name -->
+              <div>
+                <label for="email" class="block text-sm font-medium text-gray-700 mb-2"> Name </label>
+                <input
+                  type="text"
+                  id="email"
+                  name="email"
+                  placeholder="Enter your full name"
+                  class="w-full px-4 py-3 border border-[#ecc450] rounded-[3px] focus:outline-none focus:ring-2 focus:ring-[#ecc450] focus:border-transparent transition-all shadow-sm"
+                />
+              </div>
+
               <!-- Email/Phone Field -->
               <div>
                 <label for="email" class="block text-sm font-medium text-gray-700 mb-2"> Email or Phone Number </label>
@@ -279,28 +271,25 @@
                   placeholder="Enter Password"
                   class="w-full px-4 py-3 border border-[#ecc450] rounded-[3px] focus:outline-none focus:ring-2 focus:ring-[#ecc450] focus:border-transparent transition-all shadow-sm"
                 />
-                <div class="text-right mt-2">
-                  <a href="#" class="text-sm text-[#ecc450] hover:text-yellow-500 transition-colors underline">
-                    Forgot Password?
-                  </a>
-                </div>
-                <!-- Back to Home Link -->
-                <div class="mb-1 text-right">
-                  <a href="index.html" class="text-sm text-[#ecc450] hover:text-yellow-500 underline transition-colors">
-                    ← Back to Home
-                  </a>
-                </div>
               </div>
 
-              <!-- Remember Me -->
-              <div class="flex items-center">
+              <!-- Confirm Password Field -->
+              <div>
+                <label for="password" class="block text-sm font-medium text-gray-700 mb-2"> Confirm Password </label>
                 <input
-                  type="checkbox"
-                  id="remember"
-                  name="remember"
-                  class="w-4 h-4 text-[#ecc450] border-gray-300 rounded focus:ring-[#ecc450]"
+                  type="password"
+                  id="password"
+                  name="password"
+                  placeholder="Enter Confirm Password"
+                  class="w-full px-4 py-3 border border-[#ecc450] rounded-[3px] focus:outline-none focus:ring-2 focus:ring-[#ecc450] focus:border-transparent transition-all shadow-sm"
                 />
-                <label for="remember" class="ml-2 text-sm text-gray-700"> Remember me </label>
+              </div>
+
+              <!-- Back to Home Link -->
+              <div class="mb-1 text-right">
+                <a href="index.html" class="text-sm text-[#ecc450] hover:text-yellow-500 underline transition-colors">
+                  ← Back to Home
+                </a>
               </div>
 
               <!-- Login Button -->
@@ -308,7 +297,7 @@
                 type="submit"
                 class="w-full py-3 px-6 bg-[#ecc450] text-white font-medium rounded-[3px] hover:bg-yellow-500 transition-all"
               >
-                Login
+                Sign up
               </button>
 
               <!-- Divider -->
@@ -317,7 +306,7 @@
                   <div class="w-full border-t border-gray-300"></div>
                 </div>
                 <div class="relative flex justify-center text-sm">
-                  <span class="px-4 bg-white text-gray-500">or login with</span>
+                  <span class="px-4 bg-white text-gray-500">or sign up with</span>
                 </div>
               </div>
 
