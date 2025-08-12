@@ -299,6 +299,8 @@
                 <img src="images/desktop/chair.png" alt="Yellow Chair" class="w-full h-full object-contain" />
               </div>
 
+              <a href="index.html" class="text-[#ecc450] underline">Back To Home Page</a>
+
               <!-- Furniture Badge Top -->
               <div class="absolute top-8 right-0 bg-white rounded-lg shadow-lg px-4 py-3 flex items-center gap-3">
                 <div class="w-10 h-10 bg-[#ecc450] rounded-md flex items-center justify-center">
@@ -332,16 +334,16 @@
           <!-- Right Side - Login Form Section -->
           <div class="w-full lg:w-[480px] bg-[#ffffff] rounded-[3px] shadow-xl lg:shadow-md p-8 lg:p-7">
             <!-- Login Header -->
-            <div class="mb-8">
+            <div id="loginHeader" class="mb-8">
               <h1 class="text-3xl lg:text-4xl font-semibold text-gray-900 mb-3">Login</h1>
               <p class="text-gray-600">
-                Don't have a account?
+                Don't have an account?
                 <a href="#" class="text-[#ecc450] hover:text-yellow-500 transition-colors ml-1 underline">Sign up</a>
               </p>
             </div>
 
             <!-- Toggle Buttons -->
-            <div class="flex justify-center mb-8">
+            <div id="toggleButtons" class="flex justify-center mb-8">
               <div class="inline-flex p-0.5 bg-white border-2 border-[#ecc450] rounded-full">
                 <button
                   id="loginBtn"
@@ -441,9 +443,30 @@
             </form>
 
             <!-- Guest Form (Hidden by default) -->
-            <form id="guestForm" class="space-y-6 hidden">
+            <form id="guestForm" class="space-y-2 hidden">
               <h2 class="text-2xl font-semibold text-gray-900 mb-2">Guest Login</h2>
               <p class="text-gray-600 mb-6">You can create an account later</p>
+
+              <!-- Toggle Buttons inside guest form -->
+              <div id="guestToggleButtons" class="flex justify-center mt-6 hidden">
+                <div class="inline-flex p-0.5 bg-white border-2 border-[#ecc450] rounded-full">
+                  <button
+                    id="guestFormLoginBtn"
+                    type="button"
+                    class="px-8 py-2.5 bg-transparent text-gray-700 font-medium rounded-full transition-all duration-300"
+                    onclick="showLoginForm()"
+                  >
+                    Login
+                  </button>
+                  <button
+                    id="guestFormGuestBtn"
+                    type="button"
+                    class="px-8 py-2.5 bg-[#ecc450] text-white font-medium rounded-full transition-all duration-300"
+                  >
+                    Guest Checkout
+                  </button>
+                </div>
+              </div>
 
               <!-- Email Field -->
               <div>
@@ -453,15 +476,14 @@
                   id="guestEmail"
                   name="guestEmail"
                   placeholder="you@example.com"
-                  class="w-full px-4 py-3 border-1 border-[#ecc450] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#ecc450] focus:border-transparent transition-all shadow-sm"
+                  class="w-full px-4 py-3 border border-[#ecc450] rounded-[3px] focus:outline-none focus:ring-2 focus:ring-[#ecc450] focus:border-transparent transition-all shadow-sm"
                 />
-                <p class="text-xs text-gray-500 mt-2">We need your email to proceed your order</p>
+                <p class="text-xs text-gray-500 mt-2 text-right mb-4">We need your email to proceed your order</p>
               </div>
 
-              <!-- Continue as Guest Button -->
               <button
                 type="submit"
-                class="w-full py-3 px-6 bg-[#ecc450] text-white font-medium rounded-lg hover:bg-yellow-500 transition-all shadow-lg hover:shadow-xl"
+                class="w-full py-3 px-6 bg-[#ecc450] text-white font-medium rounded-[3px] hover:bg-yellow-500 transition-all"
               >
                 Continue as Guest
               </button>
@@ -475,42 +497,32 @@
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
     <script>
-      // For mobile menu
-      const btn = document.getElementById("menu-btn");
-      const menu = document.getElementById("menu");
+      // Login/Guest toggle functionality
+      function showLoginForm() {
+        document.getElementById("loginForm").classList.remove("hidden");
+        document.getElementById("guestForm").classList.add("hidden");
 
-      btn.addEventListener("click", navToggle);
+        // Show top toggle buttons, hide guest form toggle buttons
+        document.getElementById("toggleButtons")?.classList.remove("hidden");
+        document.getElementById("guestToggleButtons")?.classList.add("hidden");
 
-      function navToggle() {
-        btn.classList.toggle("open");
-        menu.classList.toggle("flex");
-        menu.classList.toggle("hidden");
-
-        // Prevent page scroll when menu is open
-        if (menu.classList.contains("flex")) {
-          document.body.style.overflow = "hidden";
-        } else {
-          document.body.style.overflow = "";
-        }
+        // Show login header
+        document.getElementById("loginHeader")?.classList.remove("hidden");
       }
 
-      // Swiper Function
-      document.addEventListener("DOMContentLoaded", function () {
-        const servicesSwiper = new Swiper(".servicesSwiper", {
-          slidesPerView: 1,
-          spaceBetween: 12,
-          loop: true,
-          autoplay: true,
-          delay: 3000,
-          disableOnInteraction: false,
-          navigation: { nextEl: ".swiper-button-next", prevEl: ".swiper-button-prev" },
-          breakpoints: {
-            640: { slidesPerView: 2, spaceBetween: 16 },
-            768: { slidesPerView: 3, spaceBetween: 16 },
-            1024: { slidesPerView: 4, spaceBetween: 16 },
-          },
-        });
-      });
+      function showGuestForm() {
+        document.getElementById("guestForm").classList.remove("hidden");
+        document.getElementById("loginForm").classList.add("hidden");
+
+        // Hide top toggle buttons, show guest form toggle buttons
+        document.getElementById("toggleButtons")?.classList.add("hidden");
+        document.getElementById("guestToggleButtons")?.classList.remove("hidden");
+        document.getElementById("guestToggleButtons").style.marginTop = "2rem";
+        document.getElementById("guestToggleButtons").style.marginBottom = "2rem";
+
+        // Hide login header
+        document.getElementById("loginHeader")?.classList.add("hidden");
+      }
     </script>
   </body>
 </html>
