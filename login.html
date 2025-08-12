@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Sy Tu Nguyen" />
+    <!-- Google Fonts - Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <!-- Iconify -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/iconify/3.1.1/iconify.min.js"></script>
+    <!-- Tailwind CSS Plus Elements for Dropdown -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindplus/elements@1" type="module"></script>
+    <!-- Linking  Swiper JS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <!-- CSS style -->
+    <link rel="stylesheet" href="css/style.css" />
+    <title>ETA07</title>
+  </head>
+  <body class="">
+    <!-- TOP NAVIGATION BAR -->
+    <nav class="bg-[#292C2D] text-[#fffff0]" id="top">
+      <div class="max-w-7xl mx-auto px-4 sm:px-4 md:px-5 lg:px-6">
+        <div class="flex items-center justify-between h-10 sm:h-11 md:h-12">
+          <!-- Left Navigation Links -->
+          <div
+            class="hidden md:flex items-center justify-center space-x-2 sm:space-x-3 md:space-x-4 lg:space-x-6 text-xs sm:text-sm md:text-base"
+          >
+            <!-- Browse Dropdown -->
+            <el-dropdown class="relative">
+              <button class="group flex items-center hover:text-[#ecc450] transition-colors">
+                <span>Browse</span>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 10 6"
+                  class="w-2 h-2 sm:w-2.5 sm:h-2.5 md:w-3 md:h-3 ml-1 transition-transform group-data-[open]:rotate-180"
+                >
+                  <path
+                    d="M1 1l4 4 4-4"
+                    stroke="currentColor"
+                    stroke-width="1"
+                    fill="none"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </button>
+
+              <!-- Dropdown Menu For Browse -->
+              <el-menu
+                anchor="bottom start"
+                popover
+                class="w-40 origin-top-left rounded-xl bg-[#292C2D] text-[#fffff0] shadow-xl border border-black/10 p-1 z-50 mx-0 mt-4 px-2 py-2 transition transition-discrete [--anchor-gap:--spacing(0.5)] data-closed:scale-95 data-closed:opacity-0 data-closed:transform data-enter:duration-100 data-enter:ease-out data-leave:duration-75 data-leave:ease-in"
+              >
+                <a href="#" class="block px-4 py-2.5 text-sm hover:bg-[#1E2021] hover:text-[#ffffff] transition-colors"
+                  >Products</a
+                >
+                <a href="#" class="block px-4 py-2.5 text-sm hover:bg-[#1E2021] hover:text-[#ffffff] transition-colors"
+                  >Services</a
+                >
+                <a href="#" class="block px-4 py-2.5 text-sm hover:bg-[#1E2021] hover:text-[#ffffff] transition-colors"
+                  >Listings</a
+                >
+              </el-menu>
+            </el-dropdown>
+
+            <a href="#" class="hover:text-[#ecc450] transition-colors whitespace-nowrap">ETA Direct</a>
+            <a href="#" class="hover:text-[#ecc450] transition-colors">Membership</a>
+          </div>
+
+          <!-- Hamburger Button (always visible on mobile) -->
+          <div class="md:hidden">
+            <button id="menu-btn" type="button" class="relative z-[9999] block hamburger focus:outline-none">
+              <span class="hamburger-top"></span>
+              <span class="hamburger-middle"></span>
+              <span class="hamburger-bottom"></span>
+            </button>
+          </div>
+
+          <!-- Right Icons -->
+          <div class="flex items-center space-x-2 sm:space-x-2.5 md:space-x-3 lg:space-x-4">
+            <!-- Wishlist Icon -->
+            <button class="hover:text-gray-300 transition-colors p-0.5 sm:p-1">
+              <img src="images/desktop/heart.svg" alt="" class="w-5 h-5 sm:w-5.5 sm:h-5.5 md:w-6 md:h-6" />
+            </button>
+
+            <!-- Cart Icon with Badge -->
+            <button class="relative hover:text-gray-300 transition-colors p-0.5 sm:p-1">
+              <img src="images/desktop/cart.svg" alt="" class="w-5 h-5 sm:w-5.5 sm:h-5.5 md:w-6 md:h-6" />
+              <span
+                class="absolute -top-1 -right-1 bg-red-500 text-white text-xs rounded-full h-4 w-4 sm:h-4.5 sm:w-4.5 md:h-5 md:w-5 flex items-center justify-center"
+              >
+                1
+              </span>
+            </button>
+
+            <!-- Login and Register Buttons -->
+            <div class="flex items-center space-x-2 sm:space-x-2.5 md:space-x-3">
+              <!-- Login Button -->
+              <button
+                class="px-3 sm:px-3.5 md:px-4 text-[#fffff0] border border-[#fffff0] rounded-md hover:bg-[#fffff0] hover:text-[#292C2D] transition-all text-xs sm:text-sm md:text-base font-medium"
+              >
+                Login
+              </button>
+
+              <!-- Register Button -->
+              <button
+                class="px-3 sm:px-3.5 md:px-4 bg-[#ecc450] text-[#292C2D] rounded-md hover:bg-yellow-500 transition-all text-xs sm:text-sm md:text-base font-medium"
+              >
+                Register
+              </button>
+            </div>
+          </div>
+          <!-- MOBILE MENU OVERLAY (hidden by default) -->
+          <div
+            id="menu"
+            class="hidden fixed inset-0 z-[1000] bg-[#292C2D] text-[#fffff0] flex-col items-center justify-center space-y-8 text-2xl"
+          >
+            <a href="#" class="hover:text-[#ecc450]">Browse</a>
+            <a href="#" class="hover:text-[#ecc450] whitespace-nowrap">ETA Direct</a>
+            <a href="#" class="hover:text-[#ecc450]">Membership</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- MAIN HEADER WITH SEARCH -->
+    <header class="bg-white sm:bg-gray-50 shadow-sm sticky top-0 z-50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-4 md:px-5 lg:px-6 py-2.5 sm:py-3 md:py-4 lg:py-5">
+        <!-- Logo and Search in same row -->
+        <div class="flex flex-row items-center gap-2 sm:gap-3 md:gap-4 lg:gap-6">
+          <!-- Logo -->
+          <div class="flex items-center flex-shrink-0">
+            <a href="#top">
+              <img
+                src="images/desktop/logo-nav.svg"
+                alt="ETA07 Logo"
+                class="h-8 sm:h-9 md:h-10 lg:h-12 xl:h-14 w-auto object-contain transition-all cursor-pointer"
+              />
+            </a>
+          </div>
+
+          <!-- Shop by Category Dropdown - Desktop only -->
+          <div class="hidden sm:block relative flex-shrink-0">
+            <button class="flex items-center space-x-1 md:space-x-2 text-gray-600 hover:text-gray-800 transition-colors">
+              <div class="flex flex-col items-start justify-center -space-y-1">
+                <span class="text-xs md:text-sm lg:text-base leading-[1.2]">Shop by</span>
+                <span class="text-xs md:text-sm lg:text-base leading-[1.2]">category</span>
+              </div>
+              <img src="images/desktop/vector_2.svg" alt="" class="w-3.5 h-3.5 md:w-4 md:h-4 lg:w-5 lg:h-5 text-gray-500" />
+            </button>
+          </div>
+
+          <!-- Search Bar -->
+          <div class="flex-grow flex items-center w-full min-w-0">
+            <!-- Desktop: Search bar with separate button -->
+            <div class="hidden sm:flex w-full items-center gap-2 md:gap-3 lg:gap-4">
+              <!-- Search Input with Category Dropdown -->
+              <div
+                class="flex flex-grow min-w-0 border border-[#292C2D] rounded-md md:rounded-lg overflow-hidden bg-white relative"
+              >
+                <!-- Search Input -->
+                <div class="relative flex-grow min-w-0">
+                  <input
+                    type="text"
+                    placeholder="Search for products & services "
+                    class="w-full pl-8 md:pl-10 lg:pl-12 pr-2 md:pr-3 lg:pr-4 py-2 md:py-2.5 lg:py-3.5 text-xs md:text-sm lg:text-base placeholder:text-gray-500 placeholder:text-xs md:placeholder:text-sm lg:placeholder:text-base border-r focus:outline-none"
+                  />
+                  <img
+                    src="images/desktop/search.svg"
+                    class="absolute left-2 md:left-3 lg:left-4 top-1/2 transform -translate-y-1/2 w-3.5 h-3.5 md:w-4 md:h-4 lg:w-5 lg:h-5 text-gray-400"
+                    alt=""
+                  />
+                </div>
+
+                <!-- Vertical Divider -->
+                <div class="w-px bg-[#5E5E5E]"></div>
+
+                <!-- Category Dropdown Button with Tailwind CSS Plus -->
+                <el-dropdown class="flex items-center group">
+                  <button
+                    class="flex items-center px-2 md:px-3 lg:px-5 bg-white transition-colors flex-shrink-0 relative"
+                    type="button"
+                  >
+                    <span class="text-gray-600 text-xs md:text-sm lg:text-base whitespace-nowrap mr-1 md:mr-2 lg:mr-2 lg:px-4">
+                      All Categories
+                    </span>
+                    <!-- Rotate when the popover (menu) is open -->
+                    <svg
+                      class="w-3.5 h-3.5 md:w-4 md:h-4 lg:w-5 lg:h-5 text-gray-600 flex-shrink-0 transition-transform duration-200"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                    </svg>
+                  </button>
+
+                  <!-- Dropdown Menu -->
+                  <el-menu
+                    anchor="bottom end"
+                    popover
+                    class="w-22 origin-top-right rounded-lg bg-white shadow-xl outline-1 outline-black/5 transition transition-discrete [--anchor-gap:--spacing(0.5)] data-closed:scale-95 data-closed:transform data-closed:opacity-0 data-enter:duration-100 data-enter:ease-out data-leave:duration-75 data-leave:ease-in border border-gray-200 px-3 mt-7 mx-0"
+                  >
+                    <div class="py-2">
+                      <a
+                        href="#"
+                        class="block px-4 py-2.5 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900 transition-colors"
+                      >
+                        All Categories
+                      </a>
+                      <a
+                        href="#"
+                        class="block px-4 py-2.5 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900 transition-colors"
+                      >
+                        Electronics & Gadgets
+                      </a>
+                      <a
+                        href="#"
+                        class="block px-4 py-2.5 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900 transition-colors"
+                      >
+                        Fashion & Apparel
+                      </a>
+                      <a
+                        href="#"
+                        class="block px-4 py-2.5 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900 transition-colors"
+                      >
+                        Home & Living
+                      </a>
+                      <a
+                        href="#"
+                        class="block px-4 py-2.5 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900 transition-colors"
+                      >
+                        Health & Beauty
+                      </a>
+                      <a
+                        href="#"
+                        class="block px-4 py-2.5 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900 transition-colors"
+                      >
+                        Sports & Outdoors
+                      </a>
+                      <a
+                        href="#"
+                        class="block px-4 py-2.5 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900 transition-colors"
+                      >
+                        Automotive
+                      </a>
+                      <a
+                        href="#"
+                        class="block px-4 py-2.5 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900 transition-colors"
+                      >
+                        Gadget
+                      </a>
+                    </div>
+                  </el-menu>
+                </el-dropdown>
+              </div>
+
+              <!-- Search Button - Separate with gap -->
+              <button
+                class="px-4 md:px-6 lg:px-10 xl:px-12 py-2 md:py-2.5 lg:py-3.5 bg-[#ecc450] text-white font-medium rounded-md md:rounded-lg hover:bg-yellow-500 transition-all text-xs md:text-sm lg:text-base whitespace-nowrap flex-shrink-0"
+              >
+                Search
+              </button>
+            </div>
+
+            <!-- Mobile Search Bar-->
+            <div class="sm:hidden relative w-full">
+              <input
+                type="text"
+                placeholder="Search for anything"
+                class="w-full pl-3.5 pr-11 py-2 border border-[#292C2D] rounded-md focus:outline-none focus:border-[#ecc450] text-sm placeholder:text-gray-500 placeholder:text-xs"
+              />
+              <!-- Mobile Search Button  -->
+              <button
+                class="absolute right-1 top-1/2 transform -translate-y-1/2 bg-[#ecc450] rounded-md p-1.5 hover:bg-yellow-500 transition-colors"
+              >
+                <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- LOGIN FORM SECTION -->
+    <div class="bg-gray-50 min-h-[calc(100vh-140px)] flex items-center justify-center px-4 py-8">
+      <div class="w-full max-w-7xl mx-auto">
+        <div class="flex flex-col lg:flex-row justify-evenly items-center gap-8 lg:gap-10">
+          <!-- Left Side - Chair Image Section -->
+          <div class="hidden lg:flex relative">
+            <!-- Chair Container -->
+            <div class="relative">
+              <!-- Chair Image Placeholder -->
+              <div class="w-[400px] h-[500px] flex items-center justify-center">
+                <img src="images/desktop/chair.png" alt="Yellow Chair" class="w-full h-full object-contain" />
+              </div>
+
+              <!-- Furniture Badge Top -->
+              <div class="absolute top-8 right-0 bg-white rounded-lg shadow-lg px-4 py-3 flex items-center gap-3">
+                <div class="w-10 h-10 bg-[#ecc450] rounded-md flex items-center justify-center">
+                  <span class="text-white text-xl font-bold">$</span>
+                </div>
+                <div>
+                  <p class="text-sm font-semibold text-gray-900">100+</p>
+                  <p class="text-xs text-gray-600">Furniture Options</p>
+                  <p class="text-xs text-gray-600">with Discount</p>
+                </div>
+              </div>
+
+              <!-- Rating Badge Bottom -->
+              <div class="absolute bottom-20 left-0 bg-white rounded-lg shadow-lg px-4 py-3 flex items-center gap-3">
+                <div class="w-10 h-10 bg-[#ecc450] rounded-md flex items-center justify-center">
+                  <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
+                    <path
+                      d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                    />
+                  </svg>
+                </div>
+                <div>
+                  <p class="text-sm font-semibold text-gray-900">45345+</p>
+                  <p class="text-xs text-gray-600">Most Rated</p>
+                  <p class="text-xs text-gray-600">products</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Side - Login Form Section -->
+          <div class="w-full lg:w-[480px] bg-[#ffffff] rounded-[3px] shadow-xl lg:shadow-md p-8 lg:p-7">
+            <!-- Login Header -->
+            <div class="mb-8">
+              <h1 class="text-3xl lg:text-4xl font-semibold text-gray-900 mb-3">Login</h1>
+              <p class="text-gray-600">
+                Don't have a account?
+                <a href="#" class="text-[#ecc450] hover:text-yellow-500 transition-colors ml-1 underline">Sign up</a>
+              </p>
+            </div>
+
+            <!-- Toggle Buttons -->
+            <div class="flex justify-center mb-8">
+              <div class="inline-flex p-0.5 bg-white border-2 border-[#ecc450] rounded-full">
+                <button
+                  id="loginBtn"
+                  class="px-8 py-2.5 bg-[#ecc450] text-white font-medium rounded-full transition-all duration-300"
+                  onclick="showLoginForm()"
+                >
+                  Login
+                </button>
+                <button
+                  id="guestBtn"
+                  class="px-8 py-2.5 bg-transparent text-gray-700 font-medium rounded-full transition-all duration-300"
+                  onclick="showGuestForm()"
+                >
+                  Guest Checkout
+                </button>
+              </div>
+            </div>
+
+            <!-- Login Form -->
+            <form id="loginForm" class="space-y-6">
+              <!-- Email/Phone Field -->
+              <div>
+                <label for="email" class="block text-sm font-medium text-gray-700 mb-2"> Email or Phone Number </label>
+                <input
+                  type="text"
+                  id="email"
+                  name="email"
+                  placeholder="you@example.com"
+                  class="w-full px-4 py-3 border border-[#ecc450] rounded-[3px] focus:outline-none focus:ring-2 focus:ring-[#ecc450] focus:border-transparent transition-all shadow-sm"
+                />
+              </div>
+
+              <!-- Password Field -->
+              <div>
+                <label for="password" class="block text-sm font-medium text-gray-700 mb-2"> Password </label>
+                <input
+                  type="password"
+                  id="password"
+                  name="password"
+                  placeholder="Enter Password"
+                  class="w-full px-4 py-3 border border-[#ecc450] rounded-[3px] focus:outline-none focus:ring-2 focus:ring-[#ecc450] focus:border-transparent transition-all shadow-sm"
+                />
+                <div class="text-right mt-2">
+                  <a href="#" class="text-sm text-[#ecc450] hover:text-yellow-500 transition-colors underline">
+                    Forgot Password?
+                  </a>
+                </div>
+              </div>
+
+              <!-- Remember Me -->
+              <div class="flex items-center">
+                <input
+                  type="checkbox"
+                  id="remember"
+                  name="remember"
+                  class="w-4 h-4 text-[#ecc450] border-gray-300 rounded focus:ring-[#ecc450]"
+                />
+                <label for="remember" class="ml-2 text-sm text-gray-700"> Remember me </label>
+              </div>
+
+              <!-- Login Button -->
+              <button
+                type="submit"
+                class="w-full py-3 px-6 bg-[#ecc450] text-white font-medium rounded-[3px] hover:bg-yellow-500 transition-all"
+              >
+                Login
+              </button>
+
+              <!-- Divider -->
+              <div class="relative my-6">
+                <div class="absolute inset-0 flex items-center">
+                  <div class="w-full border-t border-gray-300"></div>
+                </div>
+                <div class="relative flex justify-center text-sm">
+                  <span class="px-4 bg-white text-gray-500">or login with</span>
+                </div>
+              </div>
+
+              <!-- Social Login Buttons -->
+              <div class="space-y-3">
+                <button
+                  type="button"
+                  class="w-full py-3 px-6 bg-[#F1F1F1] text-gray-700 font-medium rounded-[3px] border border-gray-200 hover:bg-gray-50 transition-all flex items-center justify-center gap-3"
+                >
+                  <img src="images/desktop/devicon_google.svg" alt="Google" />
+                  Continue with Google
+                </button>
+
+                <button
+                  type="button"
+                  class="w-full py-3 px-6 bg-[#F1F1F1] text-gray-700 font-medium rounded-[3px] border border-gray-200 hover:bg-gray-50 transition-all flex items-center justify-center gap-3"
+                >
+                  <img src="images/desktop/devicon_facebook.svg" alt="Google" />
+                  Continue with Facebook
+                </button>
+              </div>
+            </form>
+
+            <!-- Guest Form (Hidden by default) -->
+            <form id="guestForm" class="space-y-6 hidden">
+              <h2 class="text-2xl font-semibold text-gray-900 mb-2">Guest Login</h2>
+              <p class="text-gray-600 mb-6">You can create an account later</p>
+
+              <!-- Email Field -->
+              <div>
+                <label for="guestEmail" class="block text-sm font-medium text-gray-700 mb-2"> Email </label>
+                <input
+                  type="email"
+                  id="guestEmail"
+                  name="guestEmail"
+                  placeholder="you@example.com"
+                  class="w-full px-4 py-3 border-1 border-[#ecc450] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#ecc450] focus:border-transparent transition-all shadow-sm"
+                />
+                <p class="text-xs text-gray-500 mt-2">We need your email to proceed your order</p>
+              </div>
+
+              <!-- Continue as Guest Button -->
+              <button
+                type="submit"
+                class="w-full py-3 px-6 bg-[#ecc450] text-white font-medium rounded-lg hover:bg-yellow-500 transition-all shadow-lg hover:shadow-xl"
+              >
+                Continue as Guest
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Linking Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <script>
+      // For mobile menu
+      const btn = document.getElementById("menu-btn");
+      const menu = document.getElementById("menu");
+
+      btn.addEventListener("click", navToggle);
+
+      function navToggle() {
+        btn.classList.toggle("open");
+        menu.classList.toggle("flex");
+        menu.classList.toggle("hidden");
+
+        // Prevent page scroll when menu is open
+        if (menu.classList.contains("flex")) {
+          document.body.style.overflow = "hidden";
+        } else {
+          document.body.style.overflow = "";
+        }
+      }
+
+      // Swiper Function
+      document.addEventListener("DOMContentLoaded", function () {
+        const servicesSwiper = new Swiper(".servicesSwiper", {
+          slidesPerView: 1,
+          spaceBetween: 12,
+          loop: true,
+          autoplay: true,
+          delay: 3000,
+          disableOnInteraction: false,
+          navigation: { nextEl: ".swiper-button-next", prevEl: ".swiper-button-prev" },
+          breakpoints: {
+            640: { slidesPerView: 2, spaceBetween: 16 },
+            768: { slidesPerView: 3, spaceBetween: 16 },
+            1024: { slidesPerView: 4, spaceBetween: 16 },
+          },
+        });
+      });
+    </script>
+  </body>
+</html>
