@@ -1239,6 +1239,17 @@
         }
       }
 
+      // Close menu on resize to desktop
+      window.addEventListener("resize", () => {
+        if (window.innerWidth >= 1024) {
+          // Tailwind's lg breakpoint
+          menu.classList.add("hidden");
+          menu.classList.remove("flex");
+          btn.classList.remove("open");
+          document.body.style.overflow = ""; // unlock scroll
+        }
+      });
+
       // Swiper Function
       document.addEventListener("DOMContentLoaded", function () {
         const servicesSwiper = new Swiper(".servicesSwiper", {
